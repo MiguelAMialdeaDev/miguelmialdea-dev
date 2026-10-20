@@ -4,15 +4,19 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Miguel Ángel Mialdea · Senior Android Engineer</title>
-<meta name="description" content="Senior Android Engineer with 5+ years building native Kotlin apps for Fintech (Santander, Openbank). Kotlin, Jetpack Compose, KMP, Clean Architecture. Based in Valencia, Spain — available remotely." />
+<meta name="description" content="Senior Android Engineer with 5+ years building native Kotlin apps for fintech (Santander, Openbank). Kotlin, Jetpack Compose, Clean Architecture. Based in Valencia, Spain. Open to remote roles from Spain or hybrid in Valencia." />
+<link rel="canonical" href="https://miguelmialdea.com/" />
 <meta property="og:title" content="Miguel Ángel Mialdea · Senior Android Engineer" />
-<meta property="og:description" content="Native Android / Kotlin / KMP engineer. Fintech-grade apps, Clean Architecture, and AI tooling." />
+<meta property="og:description" content="Senior Android engineer. Kotlin, Jetpack Compose, Clean Architecture, fintech apps and LLM tooling. Available now." />
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://miguelmialdea.com/" />
 <meta name="theme-color" content="#0f172a" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f172a'/%3E%3Ctext x='16' y='22' font-family='Arial,sans-serif' font-size='15' font-weight='700' text-anchor='middle' fill='%235eead4'%3EMM%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+  /* Forge · redesign (in-place content fix, 2026-10-20) · macrostructure: split sticky aside · tone: technical · anchor hue: teal */
   :root{
     --bg:#0f172a;            /* slate-900 */
     --text-hi:#e2e8f0;       /* slate-200 */
@@ -25,8 +29,8 @@
     --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Roboto Mono",monospace;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
+  html{scroll-behavior:smooth;overflow-x:clip}
+  body{overflow-x:clip;
     background:var(--bg);color:var(--text);
     font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
     line-height:1.6;-webkit-font-smoothing:antialiased;
@@ -53,6 +57,11 @@
   .loc .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);
     margin-right:8px;box-shadow:0 0 8px var(--accent);animation:pulse 2.4s infinite;vertical-align:1px}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  .avail{margin-top:18px;max-width:340px;font-size:14px;color:var(--text-hi);
+    border:1px solid rgba(94,234,212,.35);background:var(--pill-bg);border-radius:10px;padding:10px 14px}
+  .avail .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);
+    margin-right:8px;vertical-align:1px}
+  .cta-inline.m-cv{display:none}
 
   .navcol{margin-top:60px;display:flex;flex-direction:column;gap:16px}
   .navcol a{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:12px;
@@ -131,12 +140,15 @@
   .foot a{color:var(--text);border-bottom:1px solid transparent}
   .foot a:hover{color:var(--accent)}
 
+  .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
   .cta-inline{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px;
     color:var(--accent);border:1px solid rgba(94,234,212,.4);border-radius:8px;padding:11px 20px;
-    margin-top:28px;transition:background .2s}
+    white-space:nowrap;transition:background .2s}
   .cta-inline:hover{background:var(--pill-bg)}
+  .cta-inline:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .proj+.proj{margin-top:20px}
 
-  .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)}
   .reveal.in{opacity:1;transform:none}
 
   /* ── MOBILE ── */
@@ -144,6 +156,7 @@
     .layout{display:block;padding:0 26px}
     .left{position:static;height:auto;padding:72px 0 20px;justify-content:flex-start}
     .navcol{display:none}
+    .cta-inline.m-cv{display:inline-flex;margin-top:18px}
     .social{margin-top:28px}
     .right{padding:28px 0 80px}
     section{margin-bottom:64px}
@@ -155,6 +168,11 @@
     .card{grid-template-columns:1fr;gap:6px;padding:16px 0}
     .cards:hover .card{opacity:1}
     #spot{display:none}
+    .proj{padding:22px}
+  }
+  @media(max-width:360px){
+    .layout{padding:0 22px}
+    .cta-inline{padding:11px 14px;font-size:12px}
   }
   @media(prefers-reduced-motion:reduce){
     .reveal{opacity:1;transform:none}.loc .dot{animation:none}
@@ -172,8 +190,10 @@
     <div>
       <h1><a href="#top">Miguel Ángel<br>Mialdea</a></h1>
       <div class="role">Senior Android Engineer</div>
-      <p class="tag">I build <b>native Android apps</b> in Kotlin for high-stakes <b>Fintech</b> — banking &amp; payments used across multiple countries.</p>
-      <div class="loc"><span class="dot"></span>VALENCIA, SPAIN · REMOTE</div>
+      <p class="tag">I build <b>native Android apps</b> in Kotlin. The last three and a half years: <b>banking and payments</b> for Santander and Openbank.</p>
+      <div class="loc">VALENCIA, SPAIN · REMOTE</div>
+      <p class="avail"><span class="dot"></span>Open to Senior Android roles, remote from Spain or hybrid in Valencia. Available now.</p>
+      <a class="cta-inline m-cv" href="./cv.pdf" target="_blank" rel="noopener">Download CV ↓</a>
 
       <nav class="navcol" aria-label="Section navigation">
         <a href="#about" class="active">ABOUT</a>
@@ -185,7 +205,7 @@
     </div>
 
     <div class="social">
-      <a href="https://github.com/MiguelMialdeaDev" target="_blank" rel="noopener" aria-label="GitHub">
+      <a href="https://github.com/MiguelAMialdeaDev" target="_blank" rel="noopener" aria-label="GitHub">
         <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
       </a>
       <a href="https://www.linkedin.com/in/miguel-mialdea-dev" target="_blank" rel="noopener" aria-label="LinkedIn">
@@ -202,12 +222,12 @@
 
     <section id="about" class="about reveal">
       <div class="m-label">About</div>
-      <p>I'm a Senior Android Engineer with <b>more than 5 years</b> of experience designing, building and optimizing native applications, focused on the <span class="hl">Fintech</span> industry — banking and digital payments where correctness isn't optional.</p>
-      <p>My core is <b>Kotlin</b>: advanced asynchronous concurrency with <b>Coroutines &amp; Flow</b>, and rigorous <b>Clean Architecture / MVVM / MVI</b>. I like owning critical engineering initiatives end to end — large-scale test refactoring, multi-country extensible architectures — and lately I've been building <b>AI-powered applications</b>, both at work and on my own stack.</p>
+      <p>I'm a Senior Android Engineer with <b>more than 5 years</b> building native Android apps in Kotlin, the last three and a half on the <span class="hl">Santander and Openbank</span> banking apps at Globant, where correctness isn't optional.</p>
+      <p>My core is <b>Kotlin</b>: <b>Coroutines and Flow</b>, <b>Jetpack Compose</b> and <b>Clean Architecture</b> with MVVM and MVI. I led a 3,000+ test migration, built an LLM tool that flags breaking changes between repositories, and outside work I ship and operate my own apps.</p>
       <div class="nums">
         <div><div class="n">5<span>+ y</span></div><div class="d">ANDROID / KOTLIN</div></div>
         <div><div class="n">3,000<span>+</span></div><div class="d">TESTS MIGRATED J4→J5</div></div>
-        <div><div class="n">100<span>%</span></div><div class="d">COUNTRY EXTENSIBILITY</div></div>
+        <div><div class="n">6</div><div class="d">MARKETS ON THE SHARED CORE</div></div>
       </div>
     </section>
 
@@ -216,28 +236,29 @@
       <div class="cards">
 
         <div class="card">
-          <div class="when">2023 — Present</div>
+          <div class="when">Apr 2023 to Sep 2026</div>
           <div>
             <h3><span class="co">Senior Android Engineer · Globant</span></h3>
-            <div class="sub">Santander &amp; Openbank projects · internal AI initiative</div>
+            <div class="sub">Santander OneApp · Openbank Multi-Country</div>
             <ul class="points">
-              <li><b>Multi-country extensibility (Openbank):</b> engineered configuration in the payments repository to reach 100% country extensibility, enabling fast adaptation to new markets.</li>
-              <li><b>Large-scale testing (Santander):</b> led the migration of 3,000+ unit tests from JUnit 4 to JUnit 5, significantly improving build speed.</li>
-              <li><b>AI &amp; multimedia:</b> building apps for an internal AI initiative; previously shipped complex video-streaming functionality.</li>
-              <li><b>Accessibility:</b> adapted screens and UI components in the dedicated a11y team.</li>
+              <li><b>Payments (Openbank):</b> delivered payment features and country-specific payment configuration in a multi-module Clean Architecture codebase, working inside the shared core consumed by the apps of 6 markets (Spain, UK, Portugal, Poland, Mexico and the US) and following the guidelines the core defines. Built reusable Jetpack Compose components together with the team.</li>
+              <li><b>Large-scale testing (Santander):</b> led the migration of 3,000+ unit tests from JUnit 4 to JUnit 5, module by module with the suite always green, which shortened builds and made CI more reliable.</li>
+              <li><b>LLM tooling:</b> built on my own initiative a tool on the Claude, GPT and Gemini APIs that compared the core with the country repositories and flagged breaking changes before merge.</li>
+              <li><b>Video:</b> built a video player on ExoPlayer that was used as the starting point for an internal Globant library.</li>
+              <li><b>Accessibility:</b> worked on critical flows (transfers, onboarding, settings) following WCAG 2.1 AA: TalkBack, dynamic text sizing and high contrast.</li>
             </ul>
-            <ul class="pills"><li>Kotlin</li><li>Jetpack Compose</li><li>Coroutines · Flow</li><li>Hilt</li><li>MVI</li><li>JUnit 5</li><li>Accessibility</li></ul>
+            <ul class="pills"><li>Kotlin</li><li>Jetpack Compose</li><li>Coroutines · Flow</li><li>Hilt</li><li>MVI</li><li>JUnit 5</li><li>ExoPlayer</li><li>Accessibility</li></ul>
           </div>
         </div>
 
         <div class="card">
-          <div class="when">2021 — 2023</div>
+          <div class="when">Jul 2021 to Apr 2023</div>
           <div>
-            <h3><span class="co">Android Developer · Rudo (Laberit)</span></h3>
+            <h3><span class="co">Android Developer · Rudo (now Lãberit)</span></h3>
             <div class="sub">Green-field products &amp; client technical consulting</div>
             <ul class="points">
-              <li><b>Full-cycle green-field (Hidroten):</b> owned the entire lifecycle of a factory inventory app — architecture, UI, SOAP business logic, client bug resolution.</li>
-              <li><b>Technical consulting (Loterías Castillo):</b> architected and built an MVP demo, managing client communication directly.</li>
+              <li><b>Full-cycle green-field (Hidroten):</b> owned the entire lifecycle of a factory inventory app: architecture, UI, SOAP business logic and client bug fixing.</li>
+              <li><b>Technical consulting (Loterías Castillo):</b> built an MVP demo and handled client communication directly.</li>
               <li>Collaborated with the international Santander team (Poland) on bug-fixing.</li>
             </ul>
             <ul class="pills"><li>Kotlin</li><li>XML</li><li>MVVM</li><li>SOAP · REST</li><li>Koin</li></ul>
@@ -250,9 +271,23 @@
     <section id="work" class="reveal">
       <div class="m-label">Selected Work</div>
       <div class="proj">
+        <span class="ptag">ANDROID APP</span>
+        <h3>WarrantyVault</h3>
+        <p>Keeps receipts and warranties in one place and reminds you before they expire. Built end to end in <b>Kotlin and Jetpack Compose</b>, multi-module, with Room, WorkManager and 192 automated tests. In closed testing on Google Play.</p>
+        <ul class="pills" style="margin-top:18px"><li>Kotlin</li><li>Jetpack Compose</li><li>Room</li><li>WorkManager</li><li>Play Billing</li></ul>
+      </div>
+
+      <div class="proj">
+        <span class="ptag">IN PRODUCTION</span>
+        <h3>Point of sale for a real shop</h3>
+        <p>Offline-first checkout on PostgreSQL, in daily use in a shop. <b>193 automated tests</b> over pricing, tax rules and cash reconciliation. Built, deployed and operated by me.</p>
+        <ul class="pills" style="margin-top:18px"><li>PostgreSQL</li><li>Offline-first</li><li>193 tests</li></ul>
+      </div>
+
+      <div class="proj">
         <span class="ptag">PERSONAL PLATFORM</span>
-        <h3>Jarvis — AI Personal Assistant</h3>
-        <p>A self-hosted assistant platform that orchestrates a large-language-model agent over real tools: tasks, projects, calendar, briefings and automated data pipelines. Built end to end — <b>backend, real-time web HUD, voice, offline PWA and deployment</b> — as a testbed for LLM tool-use orchestration and production-grade async Python.</p>
+        <h3>Jarvis, a self-hosted personal assistant</h3>
+        <p>A self-hosted assistant that runs a language-model agent over real tools: tasks, projects, calendar, briefings and automated data pipelines. Built end to end: <b>backend, real-time web HUD, voice, offline PWA and deployment</b>, in async Python.</p>
         <div class="feat">
           <div><h4>Agentic core</h4><p>LLM + tool-calling</p></div>
           <div><h4>Real-time HUD</h4><p>live web dashboard</p></div>
@@ -260,23 +295,26 @@
           <div><h4>Offline-first PWA</h4><p>service worker + cache</p></div>
         </div>
         <ul class="pills" style="margin-top:22px"><li>Python</li><li>FastAPI</li><li>asyncio</li><li>Claude Agent SDK</li><li>WebSockets</li><li>PWA</li><li>Edge-TTS</li></ul>
-        <p class="pnote">Private project — architecture &amp; engineering shown; no live instance or personal data is exposed.</p>
+        <p class="pnote">Private project: architecture and engineering shown, no live instance or personal data exposed.</p>
       </div>
     </section>
 
     <section id="education" class="reveal">
       <div class="m-label">Education</div>
       <div class="edu">
-        <div><b>DAW — Development of Web Applications</b> <span>· Vocational Training · 2020 – 2021</span></div>
-        <div><b>DAM — Development of Multi-Platform Applications</b> <span>· Vocational Training · 2018 – 2020</span></div>
+        <div><b>DAW: Development of Web Applications</b> <span>· Vocational Training · 2020 to 2021</span></div>
+        <div><b>DAM: Development of Multi-Platform Applications</b> <span>· Vocational Training · 2018 to 2020</span></div>
+        <div><b>Languages:</b> Spanish (native) <span>·</span> English (B2, daily use with international teams)</div>
       </div>
     </section>
 
     <section id="contact" class="reveal" style="margin-bottom:40px">
       <div class="m-label">Contact</div>
-      <p class="foot" style="font-family:Inter,sans-serif;font-size:15.5px;color:var(--text)">Open to senior Android / KMP conversations — remote, or on-site in Valencia. If you're building a team that cares about clean, well-tested native apps, let's talk.</p>
-      <a class="cta-inline" href="mailto:miguelmialdeamonzo@gmail.com">miguelmialdeamonzo@gmail.com ↗</a>
-      <a class="cta-inline" style="margin-left:12px" href="./cv.pdf" target="_blank" rel="noopener">Download CV ↓</a>
+      <p class="foot" style="font-family:Inter,sans-serif;font-size:15.5px;color:var(--text)">Open to Senior Android roles, remote from Spain or hybrid in Valencia, available now. If you're building a team that cares about clean, well-tested native apps, let's talk.</p>
+      <div class="ctas">
+        <a class="cta-inline" href="mailto:miguelmialdeamonzo@gmail.com">miguelmialdeamonzo@gmail.com ↗</a>
+        <a class="cta-inline" href="./cv.pdf" target="_blank" rel="noopener">Download CV ↓</a>
+      </div>
       <p class="foot" style="margin-top:48px">Designed &amp; built from scratch by me. © <span id="yr"></span> · <span style="color:var(--accent)">miguelmialdea.com</span></p>
     </section>
 
