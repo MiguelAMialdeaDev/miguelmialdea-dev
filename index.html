@@ -10,6 +10,10 @@
 <meta property="og:description" content="Senior Android engineer. Kotlin, Jetpack Compose, Clean Architecture, fintech apps and LLM tooling. Available now." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://miguelmialdea.com/" />
+<meta property="og:image" content="https://miguelmialdea.com/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#0f172a" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f172a'/%3E%3Ctext x='16' y='22' font-family='Arial,sans-serif' font-size='15' font-weight='700' text-anchor='middle' fill='%235eead4'%3EMM%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -147,6 +151,8 @@
   .cta-inline:hover{background:var(--pill-bg)}
   .cta-inline:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
   .proj+.proj{margin-top:20px}
+  .shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px;max-width:520px}
+  .shots img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--card-line)}
 
   .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)}
   .reveal.in{opacity:1;transform:none}
@@ -274,6 +280,11 @@
         <span class="ptag">ANDROID APP</span>
         <h3>WarrantyVault</h3>
         <p>Keeps receipts and warranties in one place and reminds you before they expire. Built end to end in <b>Kotlin and Jetpack Compose</b>, multi-module, with Room, WorkManager and 192 automated tests. In closed testing on Google Play.</p>
+        <div class="shots">
+          <img src="img/wv-home.webp" width="360" height="720" loading="lazy" alt="WarrantyVault home: active, expiring and expired warranties with filters">
+          <img src="img/wv-detail.webp" width="360" height="720" loading="lazy" alt="Warranty detail with days left, store, price and expiry date">
+          <img src="img/wv-form.webp" width="360" height="720" loading="lazy" alt="Form to add a new product warranty">
+        </div>
         <ul class="pills" style="margin-top:18px"><li>Kotlin</li><li>Jetpack Compose</li><li>Room</li><li>WorkManager</li><li>Play Billing</li></ul>
       </div>
 
