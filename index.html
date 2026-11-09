@@ -1,361 +1,429 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Miguel Ángel Mialdea · Senior Android Engineer</title>
-<meta name="description" content="Senior Android Engineer with 5+ years building native Kotlin apps for fintech (Santander, Openbank). Kotlin, Jetpack Compose, Clean Architecture. Based in Valencia, Spain. Open to remote roles from Spain or hybrid in Valencia." />
-<link rel="canonical" href="https://miguelmialdea.com/" />
-<meta property="og:title" content="Miguel Ángel Mialdea · Senior Android Engineer" />
-<meta property="og:description" content="Senior Android engineer. Kotlin, Jetpack Compose, Clean Architecture, fintech apps and LLM tooling. Available now." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://miguelmialdea.com/" />
-<meta property="og:image" content="https://miguelmialdea.com/og.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="theme-color" content="#0f172a" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f172a'/%3E%3Ctext x='16' y='22' font-family='Arial,sans-serif' font-size='15' font-weight='700' text-anchor='middle' fill='%235eead4'%3EMM%3C/text%3E%3C/svg%3E" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  /* Forge · redesign (in-place content fix, 2026-10-20) · macrostructure: split sticky aside · tone: technical · anchor hue: teal */
-  :root{
-    --bg:#0f172a;            /* slate-900 */
-    --text-hi:#e2e8f0;       /* slate-200 */
-    --text:#94a3b8;          /* slate-400 */
-    --text-lo:#64748b;       /* slate-500 */
-    --accent:#5eead4;        /* teal-300 */
-    --card-hover:rgba(148,163,184,.06);
-    --card-line:rgba(148,163,184,.12);
-    --pill-bg:rgba(94,234,212,.10);
-    --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Roboto Mono",monospace;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;overflow-x:clip}
-  body{overflow-x:clip;
-    background:var(--bg);color:var(--text);
-    font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-    line-height:1.6;-webkit-font-smoothing:antialiased;
-  }
-  a{color:inherit;text-decoration:none}
-  ::selection{background:rgba(94,234,212,.25);color:var(--text-hi)}
-
-  /* spotlight that follows the cursor */
-  #spot{position:fixed;inset:0;z-index:0;pointer-events:none;
-    background:radial-gradient(600px at 50% 30%,rgba(29,78,116,.18),transparent 80%);}
-
-  .layout{position:relative;z-index:1;max-width:1200px;margin:0 auto;
-    display:grid;grid-template-columns:minmax(380px,42%) 1fr;gap:0 24px;padding:0 48px}
-
-  /* ── LEFT (sticky) ── */
-  .left{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;
-    justify-content:space-between;padding:88px 24px 64px 0}
-  h1{font-size:clamp(38px,4.4vw,50px);font-weight:700;letter-spacing:-1.2px;color:var(--text-hi);line-height:1.05}
-  h1 a:hover{color:var(--accent)}
-  .role{font-size:clamp(17px,1.8vw,21px);font-weight:500;color:var(--text-hi);margin-top:14px}
-  .tag{margin-top:14px;max-width:330px;font-size:15.5px}
-  .tag b{color:var(--text-hi);font-weight:500}
-  .loc{font-family:var(--mono);font-size:12.5px;color:var(--text-lo);margin-top:18px;letter-spacing:.6px}
-  .loc .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);
-    margin-right:8px;box-shadow:0 0 8px var(--accent);animation:pulse 2.4s infinite;vertical-align:1px}
-  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-  .avail{margin-top:18px;max-width:340px;font-size:14px;color:var(--text-hi);
-    border:1px solid rgba(94,234,212,.35);background:var(--pill-bg);border-radius:10px;padding:10px 14px}
-  .avail .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);
-    margin-right:8px;vertical-align:1px}
-  .cta-inline.m-cv{display:none}
-
-  .navcol{margin-top:60px;display:flex;flex-direction:column;gap:16px}
-  .navcol a{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:12px;
-    letter-spacing:2px;color:var(--text-lo);width:max-content;transition:color .2s}
-  .navcol a::before{content:"";height:1px;width:32px;background:var(--text-lo);transition:all .25s}
-  .navcol a:hover,.navcol a.active{color:var(--text-hi)}
-  .navcol a:hover::before,.navcol a.active::before{width:64px;background:var(--accent)}
-
-  .social{display:flex;gap:20px;align-items:center}
-  .social a{color:var(--text-lo);transition:color .2s,transform .2s;display:inline-flex}
-  .social a:hover{color:var(--accent);transform:translateY(-2px)}
-  .social svg{width:22px;height:22px;fill:currentColor}
-
-  /* ── RIGHT (scroll) ── */
-  .right{padding:88px 0 96px}
-  section{margin-bottom:96px;scroll-margin-top:80px}
-  .m-label{display:none}
-
-  .about p{max-width:560px;font-size:16px;margin-bottom:16px}
-  .about b{color:var(--text-hi);font-weight:500}
-  .about .hl{color:var(--accent)}
-
-  /* cards (experience + work) */
-  .cards{display:flex;flex-direction:column;gap:6px}
-  .card{display:grid;grid-template-columns:132px 1fr;gap:18px;padding:20px;border-radius:10px;
-    border:1px solid transparent;transition:background .25s,border-color .25s,opacity .25s}
-  .cards:hover .card{opacity:.55}
-  .cards .card:hover{opacity:1;background:var(--card-hover);border-color:var(--card-line);
-    box-shadow:0 6px 24px rgba(2,6,23,.4)}
-  .when{font-family:var(--mono);font-size:11.5px;color:var(--text-lo);letter-spacing:.8px;
-    text-transform:uppercase;padding-top:4px}
-  .card h3{font-size:16.5px;font-weight:600;color:var(--text-hi)}
-  .card h3 .co{color:var(--text-hi)}
-  .card:hover h3 .co{color:var(--accent)}
-  .card h3 .arrow{display:inline-block;transition:transform .2s;font-size:14px}
-  .card:hover h3 .arrow{transform:translate(3px,-3px)}
-  .sub{font-family:var(--mono);font-size:12px;color:var(--text-lo);margin-top:2px}
-  .card p{font-size:14.5px;margin-top:10px}
-  .card p b,.card li b{color:var(--text-hi);font-weight:500}
-  .card ul.points{list-style:none;margin-top:10px;display:flex;flex-direction:column;gap:8px}
-  .card ul.points li{position:relative;padding-left:18px;font-size:14.5px}
-  .card ul.points li::before{content:"▹";position:absolute;left:0;color:var(--accent)}
-  .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;list-style:none}
-  .pills li{font-family:var(--mono);font-size:11.5px;color:var(--accent);background:var(--pill-bg);
-    border-radius:999px;padding:5px 12px}
-
-  /* numbers strip */
-  .nums{display:flex;gap:40px;flex-wrap:wrap;margin-top:34px}
-  .nums div{min-width:120px}
-  .nums .n{font-size:26px;font-weight:700;color:var(--text-hi);letter-spacing:-.5px}
-  .nums .n span{color:var(--accent)}
-  .nums .d{font-family:var(--mono);font-size:11.5px;color:var(--text-lo);letter-spacing:.5px;margin-top:2px}
-
-  /* project featured card */
-  .proj{border:1px solid var(--card-line);border-radius:14px;padding:30px;
-    background:linear-gradient(160deg,rgba(148,163,184,.05),rgba(15,23,42,0));
-    transition:border-color .25s,box-shadow .25s;position:relative;overflow:hidden}
-  .proj:hover{border-color:rgba(94,234,212,.35);box-shadow:0 10px 34px rgba(2,6,23,.5)}
-  .ptag{font-family:var(--mono);font-size:10.5px;letter-spacing:2px;color:var(--accent);
-    border:1px solid rgba(94,234,212,.4);border-radius:999px;padding:4px 12px;display:inline-block}
-  .proj h3{font-size:22px;font-weight:700;color:var(--text-hi);margin-top:14px}
-  .proj>p{font-size:15px;margin-top:12px;max-width:600px}
-  .proj>p b{color:var(--text-hi);font-weight:500}
-  .feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:22px}
-  .feat div{border-left:2px solid var(--card-line);padding-left:12px}
-  .feat h4{font-size:13.5px;color:var(--text-hi);font-weight:600}
-  .feat p{font-family:var(--mono);font-size:12px;color:var(--text-lo)}
-  .pnote{margin-top:22px;padding-top:16px;border-top:1px dashed var(--card-line);
-    font-family:var(--mono);font-size:12px;color:var(--text-lo)}
-
-  /* education + footer */
-  .edu{display:flex;flex-direction:column;gap:10px;font-size:14.5px}
-  .edu b{color:var(--text-hi);font-weight:500}
-  .edu span{font-family:var(--mono);font-size:12px;color:var(--text-lo)}
-  .foot{font-family:var(--mono);font-size:12px;color:var(--text-lo);max-width:480px}
-  .foot a{color:var(--text);border-bottom:1px solid transparent}
-  .foot a:hover{color:var(--accent)}
-
-  .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-  .cta-inline{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px;
-    color:var(--accent);border:1px solid rgba(94,234,212,.4);border-radius:8px;padding:11px 20px;
-    white-space:nowrap;transition:background .2s}
-  .cta-inline:hover{background:var(--pill-bg)}
-  .cta-inline:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-  .proj+.proj{margin-top:20px}
-  .shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px;max-width:520px}
-  .shots img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--card-line)}
-
-  .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)}
-  .reveal.in{opacity:1;transform:none}
-
-  /* ── MOBILE ── */
-  @media(max-width:880px){
-    .layout{display:block;padding:0 26px}
-    .left{position:static;height:auto;padding:72px 0 20px;justify-content:flex-start}
-    .navcol{display:none}
-    .cta-inline.m-cv{display:inline-flex;margin-top:18px}
-    .social{margin-top:28px}
-    .right{padding:28px 0 80px}
-    section{margin-bottom:64px}
-    .m-label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:2.5px;
-      color:var(--text-hi);text-transform:uppercase;margin-bottom:22px;
-      position:sticky;top:0;background:rgba(15,23,42,.85);backdrop-filter:blur(8px);
-      padding:14px 0;z-index:5}
-    .m-label::before{content:"// ";color:var(--accent)}
-    .card{grid-template-columns:1fr;gap:6px;padding:16px 0}
-    .cards:hover .card{opacity:1}
-    #spot{display:none}
-    .proj{padding:22px}
-  }
-  @media(max-width:360px){
-    .layout{padding:0 22px}
-    .cta-inline{padding:11px 14px;font-size:12px}
-  }
-  @media(prefers-reduced-motion:reduce){
-    .reveal{opacity:1;transform:none}.loc .dot{animation:none}
-    .card,.cards:hover .card{transition:none;opacity:1}
-  }
-</style>
+<meta name="description" content="Senior Android Engineer with 5+ years of native Android in Kotlin, the last three and a half on the Santander and Openbank banking apps. Open to Senior Android roles, remote from Spain or hybrid in Valencia.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://miguelmialdea.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://miguelmialdea.com/">
+<meta property="og:title" content="Miguel Ángel Mialdea · Senior Android Engineer">
+<meta property="og:description" content="Senior Android Engineer, 5+ years of native Android in Kotlin. Banking and payments for Santander and Openbank. Available now.">
+<meta name="theme-color" content="#f3f6f6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='1.5' y='1.5' width='29' height='29' fill='%23f3f6f6' stroke='%23132340' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%23132340' stroke-width='2.5'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/barlow-condensed-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Miguel Ángel Mialdea",
+  "jobTitle": "Senior Android Engineer",
+  "email": "mailto:miguelmialdeamonzo@gmail.com",
+  "url": "https://miguelmialdea.com/",
+  "address": { "@type": "PostalAddress", "addressLocality": "Valencia", "addressCountry": "ES" },
+  "knowsLanguage": [
+    { "@type": "Language", "name": "Spanish" },
+    { "@type": "Language", "name": "English" }
+  ],
+  "knowsAbout": ["Android", "Kotlin", "Jetpack Compose", "Coroutines", "Kotlin Flow", "Clean Architecture", "JUnit 5", "Accessibility"],
+  "sameAs": [
+    "https://www.linkedin.com/in/miguel-mialdea-dev",
+    "https://github.com/MiguelAMialdeaDev"
+  ]
+}
+</script>
 </head>
 <body>
-<div id="spot"></div>
+<a class="skip" href="#main">Skip to content</a>
 
-<div class="layout">
+<div class="sheet">
 
-  <!-- LEFT — sticky identity -->
-  <aside class="left">
-    <div>
-      <h1><a href="#top">Miguel Ángel<br>Mialdea</a></h1>
-      <div class="role">Senior Android Engineer</div>
-      <p class="tag">I build <b>native Android apps</b> in Kotlin. The last three and a half years: <b>banking and payments</b> for Santander and Openbank.</p>
-      <div class="loc">VALENCIA, SPAIN · REMOTE</div>
-      <p class="avail"><span class="dot"></span>Open to Senior Android roles, remote from Spain or hybrid in Valencia. Available now.</p>
-      <a class="cta-inline m-cv" href="./cv.pdf" target="_blank" rel="noopener">Download CV ↓</a>
+  <header class="strip">
+    <nav class="strip-nav" aria-label="Sections">
+      <a href="#revisions"><span class="z" aria-hidden="true">B</span>Experience</a>
+      <a href="#parts"><span class="z" aria-hidden="true">C</span>Work</a>
+      <a href="#notes"><span class="z" aria-hidden="true">D</span>About</a>
+      <a href="#contact"><span class="z" aria-hidden="true">E</span>Contact</a>
+    </nav>
+    <a class="strip-cv" href="cv.pdf" download>CV <span class="u">PDF</span></a>
+  </header>
 
-      <nav class="navcol" aria-label="Section navigation">
-        <a href="#about" class="active">ABOUT</a>
-        <a href="#experience">EXPERIENCE</a>
-        <a href="#work">WORK</a>
-        <a href="#contact">CONTACT</a>
-        <a href="./cv.pdf" target="_blank" rel="noopener">CV (PDF)</a>
-      </nav>
-    </div>
+  <main id="main">
 
-    <div class="social">
-      <a href="https://github.com/MiguelAMialdeaDev" target="_blank" rel="noopener" aria-label="GitHub">
-        <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/in/miguel-mialdea-dev" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"/></svg>
-      </a>
-      <a href="mailto:miguelmialdeamonzo@gmail.com" aria-label="Email">
-        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
-      </a>
-    </div>
-  </aside>
+    <!-- A · title -->
+    <section class="zone zone-a" aria-labelledby="name">
+      <div class="rail" aria-hidden="true"><span>A</span></div>
+      <div class="body">
+        <div class="ident">
+          <h1 id="name">Miguel Ángel<br>Mialdea</h1>
+          <p class="role">Senior Android Engineer</p>
+          <p class="hook">I build native Android apps in Kotlin. The last three and a half years: banking and payments for Santander and Openbank.</p>
+        </div>
 
-  <!-- RIGHT — scrolling content -->
-  <main class="right" id="top">
+        <aside class="titleblock" aria-label="Summary and contact">
+          <dl class="tb-fields">
+            <div class="tb-cell tb-name"><dt>Email</dt><dd><a href="mailto:miguelmialdeamonzo@gmail.com">miguelmialdeamonzo@gmail.com</a></dd></div>
+            <div class="tb-cell"><dt>Based in</dt><dd>Valencia, Spain</dd></div>
+            <div class="tb-cell"><dt>Languages</dt><dd>Spanish (native) · English (B2)</dd></div>
+            <div class="tb-cell tb-wide"><dt>Domain</dt><dd>Native Android in Kotlin · banking and payments</dd></div>
+          </dl>
+          <p class="tb-status"><span class="tb-label">Status</span><span class="redline">Open to Senior Android roles, remote from Spain or hybrid in Valencia. <strong>Available now.</strong></span></p>
+          <div class="tb-actions">
+            <a class="btn btn-solid" href="cv.pdf" download>
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v8m0 0-3.5-3.5M8 10l3.5-3.5M2.5 13.5h11"/></svg>
+              Download CV
+            </a>
+            <a class="btn btn-line" href="mailto:miguelmialdeamonzo@gmail.com">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3.5h12v9H2zM2 3.5l6 5 6-5"/></svg>
+              Email me
+            </a>
+          </div>
+          <dl class="tb-foot">
+            <div><dt>Dwg no.</dt><dd>MAM-ANDROID-01</dd></div>
+            <div><dt>Rev</dt><dd>C</dd></div>
+            <div><dt>Issued</dt><dd>Nov 2026</dd></div>
+          </dl>
+        </aside>
 
-    <section id="about" class="about reveal">
-      <div class="m-label">About</div>
-      <p>I'm a Senior Android Engineer with <b>more than 5 years</b> building native Android apps in Kotlin, the last three and a half on the <span class="hl">Santander and Openbank</span> banking apps at Globant, where correctness isn't optional.</p>
-      <p>My core is <b>Kotlin</b>: <b>Coroutines and Flow</b>, <b>Jetpack Compose</b> and <b>Clean Architecture</b> with MVVM and MVI. I led a 3,000+ test migration, built an LLM tool that flags breaking changes between repositories, and outside work I ship and operate my own apps.</p>
-      <div class="nums">
-        <div><div class="n">5<span>+ y</span></div><div class="d">ANDROID / KOTLIN</div></div>
-        <div><div class="n">3,000<span>+</span></div><div class="d">TESTS MIGRATED J4→J5</div></div>
-        <div><div class="n">6</div><div class="d">MARKETS ON THE SHARED CORE</div></div>
+        <figure class="chain" aria-labelledby="chain-cap">
+          <figcaption id="chain-cap" class="sr">Career timeline: Rudo from July 2021 to April 2023, Globant from April 2023 to September 2026, open to a new role since then.</figcaption>
+          <div class="dim dim-total" aria-hidden="true">
+            <span class="dim-line"></span>
+            <span class="dim-text">5+ years · native Android / Kotlin</span>
+          </div>
+          <div class="chain-row" aria-hidden="true">
+            <div class="seg" style="--m:21">
+              <span class="dim-line"></span>
+              <span class="seg-text"><b>Rudo</b> 21 mo</span>
+            </div>
+            <div class="seg" style="--m:41">
+              <span class="dim-line"></span>
+              <span class="seg-text"><b>Globant</b> 41 mo</span>
+            </div>
+            <div class="seg seg-now" style="--m:2">
+              <span class="dim-line"></span>
+            </div>
+          </div>
+          <div class="chain-dates" aria-hidden="true">
+            <span style="--at:0">07.2021</span>
+            <span style="--at:21">04.2023</span>
+            <span style="--at:62" class="d-end">09.2026</span>
+            <span class="d-now">now</span>
+          </div>
+        </figure>
       </div>
     </section>
 
-    <section id="experience" class="reveal">
-      <div class="m-label">Experience</div>
-      <div class="cards">
+    <!-- B · revisions -->
+    <section class="zone" id="revisions" aria-labelledby="rev-h">
+      <div class="rail" aria-hidden="true"><span>B</span></div>
+      <div class="body">
+        <h2 id="rev-h" class="sec-h">Revision history <span class="sec-sub">Experience, newest first</span></h2>
 
-        <div class="card">
-          <div class="when">Apr 2023 to Sep 2026</div>
-          <div>
-            <h3><span class="co">Senior Android Engineer · Globant</span></h3>
-            <div class="sub">Santander OneApp · Openbank Multi-Country</div>
-            <ul class="points">
-              <li><b>Payments (Openbank):</b> delivered payment features and country-specific payment configuration in a multi-module Clean Architecture codebase, working inside the shared core consumed by the apps of 6 markets (Spain, UK, Portugal, Poland, Mexico and the US) and following the guidelines the core defines. Built reusable Jetpack Compose components together with the team.</li>
-              <li><b>Large-scale testing (Santander):</b> led the migration of 3,000+ unit tests from JUnit 4 to JUnit 5, module by module with the suite always green, which shortened builds and made CI more reliable.</li>
-              <li><b>LLM tooling:</b> built on my own initiative a tool on the Claude, GPT and Gemini APIs that compared the core with the country repositories and flagged breaking changes before merge.</li>
-              <li><b>Video:</b> built a video player on ExoPlayer that was used as the starting point for an internal Globant library.</li>
-              <li><b>Accessibility:</b> worked on critical flows (transfers, onboarding, settings) following WCAG 2.1 AA: TalkBack, dynamic text sizing and high contrast.</li>
+        <ol class="revs">
+          <li class="rev rev-c">
+            <div class="rev-mark" aria-hidden="true"><span>C</span></div>
+            <p class="rev-when"><span class="sr">Revision C. </span>Sep 2026 to now</p>
+            <div class="rev-desc">
+              <h3>Open to Senior Android roles</h3>
+            </div>
+          </li>
+
+          <li class="rev">
+            <div class="rev-mark" aria-hidden="true"><span>B</span></div>
+            <p class="rev-when"><span class="sr">Revision B. </span>Apr 2023 to Sep 2026</p>
+            <div class="rev-desc">
+              <h3>Senior Android Engineer · Globant</h3>
+              <p class="rev-proj">Santander OneApp · Openbank Multi-Country</p>
+
+              <div class="rev-detail">
+                <ol class="notes">
+                  <li><b>Payments (Openbank):</b> delivered payment features and country-specific payment configuration in a multi-module Clean Architecture codebase, working inside the shared core consumed by the apps of 6 markets (Spain, UK, Portugal, Poland, Mexico and the US). I followed the guidelines the core defines and built reusable Jetpack Compose components together with the team.</li>
+                  <li><b>Large-scale testing (Santander):</b> volunteered to take on and drove the migration of 3,000+ unit tests from JUnit 4 to JUnit 5, module by module with the suite always green, which shortened builds and made CI more reliable.</li>
+                  <li><b>LLM tooling:</b> built on my own initiative a tool on the Claude, GPT and Gemini APIs that compared the core with the country repositories and flagged breaking changes before merge.</li>
+                  <li><b>Video:</b> built a video player on ExoPlayer that was used as the starting point for an internal Globant library.</li>
+                  <li><b>Accessibility:</b> in the accessibility team, refactored critical flows to WCAG guidelines: TalkBack support, Compose Semantics, content descriptions and scalable font sizes, validated with TalkBack.</li>
+                </ol>
+
+                <div class="details">
+                  <figure class="detail detail-core">
+                    <figcaption><span class="callout" aria-hidden="true">1</span>Detail 1 · Shared core, 6 markets</figcaption>
+                    <div class="core">
+                      <div class="core-box">Shared core<small>payment features and configuration delivered inside it</small></div>
+                      <ul class="core-markets">
+                        <li>Spain</li><li>UK</li><li>Portugal</li><li>Poland</li><li>Mexico</li><li>US</li>
+                      </ul>
+                    </div>
+                  </figure>
+                  <figure class="detail detail-tests">
+                    <figcaption><span class="callout" aria-hidden="true">2</span>Detail 2 · Test migration</figcaption>
+                    <div class="migr">
+                      <span class="migr-from">JUnit 4</span>
+                      <span class="migr-dim"><span class="dim-line"></span><span class="migr-n">3,000+ unit tests</span></span>
+                      <span class="migr-to">JUnit 5</span>
+                    </div>
+                    <p class="migr-note">Module by module, suite always green.</p>
+                  </figure>
+                </div>
+              </div>
+
+              <ul class="spec" aria-label="Stack">
+                <li>Kotlin</li><li>Jetpack Compose</li><li>Coroutines · Flow</li><li>Hilt</li><li>MVI</li><li>JUnit 5</li><li>ExoPlayer</li><li>Accessibility</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="rev">
+            <div class="rev-mark" aria-hidden="true"><span>A</span></div>
+            <p class="rev-when"><span class="sr">Revision A. </span>Jul 2021 to Apr 2023</p>
+            <div class="rev-desc">
+              <h3>Android Developer · Rudo <span class="muted">(now Lãberit)</span></h3>
+              <p class="rev-proj">Green-field products and client technical consulting</p>
+              <ol class="notes">
+                <li><b>Full-cycle green-field (Hidroten):</b> owned the entire lifecycle of a factory inventory app: architecture, UI, SOAP business logic and client bug fixing.</li>
+                <li><b>Technical consulting (Loterías Castillo):</b> on the project from day one, handling client communication directly.</li>
+                <li><b>Santander:</b> bug-fixing with the international team in Poland, then the payments core team, where I stayed after moving to Globant.</li>
+              </ol>
+              <ul class="spec" aria-label="Stack">
+                <li>Kotlin</li><li>XML</li><li>MVVM</li><li>SOAP · REST</li><li>Koin</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- C · parts -->
+    <section class="zone" id="parts" aria-labelledby="parts-h">
+      <div class="rail" aria-hidden="true"><span>C</span></div>
+      <div class="body">
+        <h2 id="parts-h" class="sec-h">Parts list <span class="sec-sub">Selected work, built and operated by me</span></h2>
+
+        <ul class="cards" role="list">
+          <li class="card">
+            <div class="card-fig card-fig-shots">
+              <img src="img/wv-home.webp" width="360" height="720" loading="lazy" decoding="async" alt="">
+              <img src="img/wv-detail.webp" width="360" height="720" loading="lazy" decoding="async" alt="">
+            </div>
+            <div class="card-body">
+              <span class="card-kind"><span class="balloon" aria-hidden="true">1</span>Android app</span>
+              <h3><a class="card-link" href="#part-1" data-dialog="part-1" aria-haspopup="dialog">WarrantyVault</a></h3>
+              <p>Receipts and warranties in one place, with a reminder before they expire.</p>
+              <p class="card-meta"><span><b>192</b> tests</span><span>Closed testing on Google Play</span></p>
+              <span class="card-more" aria-hidden="true">View details <span class="arr">→</span></span>
+            </div>
+          </li>
+          <li class="card">
+            <div class="card-fig">
+              <svg class="schem" viewBox="0 0 320 240" role="img" aria-label="Diagram: a walking route through four stops, each with a trigger radius; the narration starts when the walker enters the radius of a stop.">
+                <path class="ln dash" d="M26 196C70 196 70 128 112 128S150 64 196 64S252 150 296 120"/>
+                <circle class="zone-r" cx="112" cy="128" r="24"/><circle class="stop" cx="112" cy="128" r="5"/>
+                <circle class="zone-r" cx="196" cy="64" r="24"/><circle class="stop" cx="196" cy="64" r="5"/>
+                <circle class="zone-r on" cx="262" cy="137" r="24"/><circle class="stop on" cx="262" cy="137" r="5"/>
+                <circle class="stop" cx="26" cy="196" r="5"/>
+                <path class="hd" d="M246 147l8-3-3 8z"/>
+                <text x="112" y="172" class="sm">STOP 1</text><text x="196" y="30" class="sm">STOP 2</text>
+                <text x="262" y="184" class="sm">STOP 3 · PLAYING</text>
+                <text x="56" y="226" class="sm">START</text>
+              </svg>
+            </div>
+            <div class="card-body">
+              <span class="card-kind"><span class="balloon" aria-hidden="true">2</span>Android app</span>
+              <h3><a class="card-link" href="#part-tour" data-dialog="part-tour" aria-haspopup="dialog">Guía turística</a></h3>
+              <p>An audio guide that tells you the story of each place as you walk past it.</p>
+              <p class="card-meta"><span><b>135</b> tests</span><span>In development</span></p>
+              <span class="card-more" aria-hidden="true">View details <span class="arr">→</span></span>
+            </div>
+          </li>
+          <li class="card">
+            <div class="card-fig">
+              <svg class="schem" viewBox="0 0 320 240" role="img" aria-label="Diagram: the till works against a local store and syncs with PostgreSQL when there is connection.">
+                <rect x="16" y="88" width="70" height="56"/><text x="51" y="121">TILL</text>
+                <path class="ln" d="M86 116h24"/><path class="hd" d="M110 116l-7-4v8z"/>
+                <rect x="110" y="88" width="80" height="56"/><text x="150" y="114">LOCAL</text><text x="150" y="130">STORE</text>
+                <text x="215" y="106" class="sm">SYNC</text>
+                <path class="ln dash" d="M190 116h46"/><path class="hd" d="M236 116l-7-4v8z"/>
+                <ellipse cx="262" cy="92" rx="22" ry="6"/><path d="M240 92v48a22 6 0 0 0 44 0V92"/>
+                <text x="262" y="166" class="sm">POSTGRESQL</text>
+                <path class="ln" d="M16 190h268M16 184v12M284 184v12"/>
+                <text x="152" y="214" class="sm">193 TESTS · PRICING · TAX · CASH</text>
+              </svg>
+            </div>
+            <div class="card-body">
+              <span class="card-kind"><span class="balloon" aria-hidden="true">3</span>In production</span>
+              <h3><a class="card-link" href="#part-2" data-dialog="part-2" aria-haspopup="dialog">Point of sale for a real shop</a></h3>
+              <p>Offline-first checkout, in daily use in a shop. Built and operated by me.</p>
+              <p class="card-meta"><span><b>193</b> tests</span><span>In daily use</span></p>
+              <span class="card-more" aria-hidden="true">View details <span class="arr">→</span></span>
+            </div>
+          </li>
+          <li class="card">
+            <div class="card-fig">
+              <svg class="schem" viewBox="0 0 320 240" role="img" aria-label="Diagram: an agent core connected to tools above and to the HUD, voice and PWA interfaces below.">
+                <rect x="14" y="22" width="64" height="34"/><text x="46" y="44" class="sm">TASKS</text>
+                <rect x="90" y="22" width="64" height="34"/><text x="122" y="44" class="sm">CALENDAR</text>
+                <rect x="166" y="22" width="64" height="34"/><text x="198" y="44" class="sm">BRIEFINGS</text>
+                <rect x="242" y="22" width="64" height="34"/><text x="274" y="44" class="sm">PIPELINES</text>
+                <path class="ln" d="M46 56v30h228V56M122 56v30M198 56v30M160 86v14"/>
+                <rect class="core" x="104" y="100" width="112" height="44"/><text x="160" y="127">AGENT CORE</text>
+                <path class="ln" d="M160 144v18M70 162h180M70 162v18M160 162v18M250 162v18"/>
+                <rect x="34" y="180" width="72" height="34"/><text x="70" y="202" class="sm">HUD</text>
+                <rect x="124" y="180" width="72" height="34"/><text x="160" y="202" class="sm">VOICE</text>
+                <rect x="214" y="180" width="72" height="34"/><text x="250" y="202" class="sm">PWA</text>
+              </svg>
+            </div>
+            <div class="card-body">
+              <span class="card-kind"><span class="balloon" aria-hidden="true">4</span>Personal platform</span>
+              <h3><a class="card-link" href="#part-3" data-dialog="part-3" aria-haspopup="dialog">Jarvis</a></h3>
+              <p>A self-hosted assistant: a language model agent working over real tools.</p>
+              <p class="card-meta"><span>Python · FastAPI</span><span>Private project</span></p>
+              <span class="card-more" aria-hidden="true">View details <span class="arr">→</span></span>
+            </div>
+          </li>
+        </ul>
+
+        <dialog class="dlg" id="part-1" aria-labelledby="p1-h">
+          <div class="dlg-head">
+            <span class="dlg-ref">Item 1 · Detail</span>
+            <form method="dialog"><button class="dlg-close" type="submit">Close<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg></button></form>
+          </div>
+          <div class="dlg-body">
+            <article class="part part-1" aria-labelledby="p1-h">
+            <div class="part-text">
+            <h3 id="p1-h"><span class="balloon" aria-hidden="true">1</span>WarrantyVault <span class="part-kind">Android app</span></h3>
+            <p>Keeps receipts and warranties in one place and reminds you before they expire. Built end to end in <b>Kotlin and Jetpack Compose</b>, multi-module, with Room, WorkManager and <b>192 automated tests</b>. In closed testing on Google Play.</p>
+            <ul class="spec" aria-label="Stack">
+              <li>Kotlin</li><li>Jetpack Compose</li><li>Room</li><li>WorkManager</li><li>Play Billing</li>
             </ul>
-            <ul class="pills"><li>Kotlin</li><li>Jetpack Compose</li><li>Coroutines · Flow</li><li>Hilt</li><li>MVI</li><li>JUnit 5</li><li>ExoPlayer</li><li>Accessibility</li></ul>
+            </div>
+            <div class="views">
+            <figure class="view">
+              <span class="callout" aria-hidden="true">A</span>
+              <img src="img/wv-home.webp" width="360" height="720" loading="lazy" decoding="async" alt="WarrantyVault home screen: warranty counters and a list with one expired and two active warranties.">
+              <figcaption>View A · Warranty list</figcaption>
+            </figure>
+            <figure class="view">
+              <span class="callout" aria-hidden="true">B</span>
+              <img src="img/wv-form.webp" width="360" height="720" loading="lazy" decoding="async" alt="WarrantyVault new warranty form: receipt photo, product, store, price, purchase date and duration with the computed end date.">
+              <figcaption>View B · New warranty</figcaption>
+            </figure>
+            <figure class="view">
+              <span class="callout" aria-hidden="true">C</span>
+              <img src="img/wv-detail.webp" width="360" height="720" loading="lazy" decoding="async" alt="WarrantyVault detail screen: days remaining, progress to expiry and purchase data.">
+              <figcaption>View C · Warranty detail</figcaption>
+            </figure>
+            </div>
+            </article>
+          </div>
+        </dialog>
+        <dialog class="dlg" id="part-tour" aria-labelledby="pt-h">
+          <div class="dlg-head">
+            <span class="dlg-ref">Item 2 · Detail</span>
+            <form method="dialog"><button class="dlg-close" type="submit">Close<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg></button></form>
+          </div>
+          <div class="dlg-body">
+            <article class="part" aria-labelledby="pt-h">
+            <h3 id="pt-h"><span class="balloon" aria-hidden="true">2</span>Guía turística <span class="part-kind">Android app</span></h3>
+            <p>A city walk with a narrator in your pocket: when you reach a stop, the app plays its story. Once a city is downloaded it works offline, with no account. Built end to end in <b>Kotlin and Jetpack Compose</b>: audio with Media3 and a media session, location and geofencing, background downloads with WorkManager, Room, Koin, Play Billing and <b>135 automated tests</b>.</p>
+            <p>Routes in progress for Valencia, Sevilla and Toledo. Not on Google Play yet.</p>
+            <ul class="spec" aria-label="Stack">
+              <li>Kotlin</li><li>Jetpack Compose</li><li>Media3</li><li>Geofencing</li><li>WorkManager</li><li>Room</li><li>Koin</li><li>Play Billing</li>
+            </ul>
+            <p class="part-note">Private repository: the source code is not public.</p>
+            </article>
+          </div>
+        </dialog>
+        <dialog class="dlg" id="part-2" aria-labelledby="p2-h">
+          <div class="dlg-head">
+            <span class="dlg-ref">Item 3 · Detail</span>
+            <form method="dialog"><button class="dlg-close" type="submit">Close<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg></button></form>
+          </div>
+          <div class="dlg-body">
+            <article class="part" aria-labelledby="p2-h">
+            <h3 id="p2-h"><span class="balloon" aria-hidden="true">3</span>Point of sale for a real shop <span class="part-kind">In production</span></h3>
+            <p>Offline-first checkout on PostgreSQL, in daily use in a shop. <b>193 automated tests</b> over pricing, tax rules and cash reconciliation. Built, deployed and operated by me.</p>
+            <ul class="spec" aria-label="Stack">
+              <li>PostgreSQL</li><li>Offline-first</li>
+            </ul>
+            </article>
+          </div>
+        </dialog>
+        <dialog class="dlg" id="part-3" aria-labelledby="p3-h">
+          <div class="dlg-head">
+            <span class="dlg-ref">Item 4 · Detail</span>
+            <form method="dialog"><button class="dlg-close" type="submit">Close<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg></button></form>
+          </div>
+          <div class="dlg-body">
+            <article class="part" aria-labelledby="p3-h">
+            <h3 id="p3-h"><span class="balloon" aria-hidden="true">4</span>Jarvis, a self-hosted personal assistant <span class="part-kind">Personal platform</span></h3>
+            <p>A self-hosted assistant that runs a language-model agent over real tools: tasks, projects, calendar, briefings and automated data pipelines. Built end to end: <b>backend, real-time web HUD, voice, offline PWA and deployment</b>, in async Python.</p>
+            <dl class="subparts">
+              <div><dt><span class="sub-n">4.1</span>Agentic core</dt><dd>LLM + tool-calling</dd></div>
+              <div><dt><span class="sub-n">4.2</span>Real-time HUD</dt><dd>live web dashboard</dd></div>
+              <div><dt><span class="sub-n">4.3</span>Voice interface</dt><dd>speech in, TTS out</dd></div>
+              <div><dt><span class="sub-n">4.4</span>Offline-first PWA</dt><dd>service worker + cache</dd></div>
+            </dl>
+            <ul class="spec" aria-label="Stack">
+              <li>Python</li><li>FastAPI</li><li>asyncio</li><li>Claude Agent SDK</li><li>WebSockets</li><li>PWA</li><li>Edge-TTS</li>
+            </ul>
+            <p class="part-note">Private project: architecture and engineering shown, no live instance or personal data exposed.</p>
+            </article>
+          </div>
+        </dialog>
+      </div>
+    </section>
+
+    <!-- D · notes -->
+    <section class="zone" id="notes" aria-labelledby="notes-h">
+      <div class="rail" aria-hidden="true"><span>D</span></div>
+      <div class="body notes-body">
+        <h2 id="notes-h" class="sec-h">General notes <span class="sec-sub">About</span></h2>
+        <ol class="gnotes">
+          <li>I'm a Senior Android Engineer with more than 5 years building native Android apps in Kotlin, the last three and a half on the Santander and Openbank banking apps at Globant, where correctness isn't optional.</li>
+          <li>My core is <b>Kotlin</b>: <b>Coroutines and Flow</b>, <b>Jetpack Compose</b> and <b>Clean Architecture with MVVM and MVI</b>.</li>
+          <li>I drove a 3,000+ test migration, built an LLM tool that flags breaking changes between repositories, and outside work I ship and operate my own apps.</li>
+        </ol>
+        <dl class="facts">
+          <div><dt>Education</dt><dd>DAW: Development of Web Applications · Vocational Training · 2020 to 2021</dd><dd>DAM: Development of Multi-Platform Applications · Vocational Training · 2018 to 2020</dd></div>
+          <div><dt>Languages</dt><dd>Spanish (native)</dd><dd>English (B2, daily use with international teams)</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- E · contact -->
+    <section class="zone zone-e" id="contact" aria-labelledby="contact-h">
+      <div class="rail" aria-hidden="true"><span>E</span></div>
+      <div class="body">
+        <h2 id="contact-h" class="sec-h">Approval <span class="sec-sub">Contact</span></h2>
+        <div class="approve">
+          <p class="approve-lead">Open to Senior Android roles, remote from Spain or hybrid in Valencia, <span class="redline">available now</span>. If you're building a team that cares about clean, well-tested native apps, let's talk.</p>
+          <a class="mail" href="mailto:miguelmialdeamonzo@gmail.com">miguelmialdeamonzo<wbr>@gmail.com</a>
+          <div class="approve-actions">
+            <a class="btn btn-solid" href="cv.pdf" download>
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v8m0 0-3.5-3.5M8 10l3.5-3.5M2.5 13.5h11"/></svg>
+              Download CV
+            </a>
+            <a class="btn btn-line" href="https://www.linkedin.com/in/miguel-mialdea-dev" rel="noopener">LinkedIn</a>
+            <a class="btn btn-line" href="https://github.com/MiguelAMialdeaDev" rel="noopener">GitHub</a>
           </div>
         </div>
-
-        <div class="card">
-          <div class="when">Jul 2021 to Apr 2023</div>
-          <div>
-            <h3><span class="co">Android Developer · Rudo (now Lãberit)</span></h3>
-            <div class="sub">Green-field products &amp; client technical consulting</div>
-            <ul class="points">
-              <li><b>Full-cycle green-field (Hidroten):</b> owned the entire lifecycle of a factory inventory app: architecture, UI, SOAP business logic and client bug fixing.</li>
-              <li><b>Technical consulting (Loterías Castillo):</b> built an MVP demo and handled client communication directly.</li>
-              <li>Collaborated with the international Santander team (Poland) on bug-fixing.</li>
-            </ul>
-            <ul class="pills"><li>Kotlin</li><li>XML</li><li>MVVM</li><li>SOAP · REST</li><li>Koin</li></ul>
-          </div>
-        </div>
-
       </div>
     </section>
-
-    <section id="work" class="reveal">
-      <div class="m-label">Selected Work</div>
-      <div class="proj">
-        <span class="ptag">ANDROID APP</span>
-        <h3>WarrantyVault</h3>
-        <p>Keeps receipts and warranties in one place and reminds you before they expire. Built end to end in <b>Kotlin and Jetpack Compose</b>, multi-module, with Room, WorkManager and 192 automated tests. In closed testing on Google Play.</p>
-        <div class="shots">
-          <img src="img/wv-home.webp" width="360" height="720" loading="lazy" alt="WarrantyVault home: active, expiring and expired warranties with filters">
-          <img src="img/wv-detail.webp" width="360" height="720" loading="lazy" alt="Warranty detail with days left, store, price and expiry date">
-          <img src="img/wv-form.webp" width="360" height="720" loading="lazy" alt="Form to add a new product warranty">
-        </div>
-        <ul class="pills" style="margin-top:18px"><li>Kotlin</li><li>Jetpack Compose</li><li>Room</li><li>WorkManager</li><li>Play Billing</li></ul>
-      </div>
-
-      <div class="proj">
-        <span class="ptag">IN PRODUCTION</span>
-        <h3>Point of sale for a real shop</h3>
-        <p>Offline-first checkout on PostgreSQL, in daily use in a shop. <b>193 automated tests</b> over pricing, tax rules and cash reconciliation. Built, deployed and operated by me.</p>
-        <ul class="pills" style="margin-top:18px"><li>PostgreSQL</li><li>Offline-first</li><li>193 tests</li></ul>
-      </div>
-
-      <div class="proj">
-        <span class="ptag">PERSONAL PLATFORM</span>
-        <h3>Jarvis, a self-hosted personal assistant</h3>
-        <p>A self-hosted assistant that runs a language-model agent over real tools: tasks, projects, calendar, briefings and automated data pipelines. Built end to end: <b>backend, real-time web HUD, voice, offline PWA and deployment</b>, in async Python.</p>
-        <div class="feat">
-          <div><h4>Agentic core</h4><p>LLM + tool-calling</p></div>
-          <div><h4>Real-time HUD</h4><p>live web dashboard</p></div>
-          <div><h4>Voice interface</h4><p>speech in / TTS out</p></div>
-          <div><h4>Offline-first PWA</h4><p>service worker + cache</p></div>
-        </div>
-        <ul class="pills" style="margin-top:22px"><li>Python</li><li>FastAPI</li><li>asyncio</li><li>Claude Agent SDK</li><li>WebSockets</li><li>PWA</li><li>Edge-TTS</li></ul>
-        <p class="pnote">Private project: architecture and engineering shown, no live instance or personal data exposed.</p>
-      </div>
-    </section>
-
-    <section id="education" class="reveal">
-      <div class="m-label">Education</div>
-      <div class="edu">
-        <div><b>DAW: Development of Web Applications</b> <span>· Vocational Training · 2020 to 2021</span></div>
-        <div><b>DAM: Development of Multi-Platform Applications</b> <span>· Vocational Training · 2018 to 2020</span></div>
-        <div><b>Languages:</b> Spanish (native) <span>·</span> English (B2, daily use with international teams)</div>
-      </div>
-    </section>
-
-    <section id="contact" class="reveal" style="margin-bottom:40px">
-      <div class="m-label">Contact</div>
-      <p class="foot" style="font-family:Inter,sans-serif;font-size:15.5px;color:var(--text)">Open to Senior Android roles, remote from Spain or hybrid in Valencia, available now. If you're building a team that cares about clean, well-tested native apps, let's talk.</p>
-      <div class="ctas">
-        <a class="cta-inline" href="mailto:miguelmialdeamonzo@gmail.com">miguelmialdeamonzo@gmail.com ↗</a>
-        <a class="cta-inline" href="./cv.pdf" target="_blank" rel="noopener">Download CV ↓</a>
-      </div>
-      <p class="foot" style="margin-top:48px">Designed &amp; built from scratch by me. © <span id="yr"></span> · <span style="color:var(--accent)">miguelmialdea.com</span></p>
-    </section>
-
   </main>
+
+  <footer class="sheet-foot">
+    <span>Designed and built from scratch by me.</span>
+    <span>© 2026 Miguel Ángel Mialdea</span>
+  </footer>
 </div>
-
+<noscript><style>.dlg{display:block;position:static;width:auto;max-height:none;margin-top:48px}.dlg-head form{display:none}</style></noscript>
 <script>
-  document.getElementById("yr").textContent = new Date().getFullYear();
-
-  // spotlight follows cursor
-  const spot = document.getElementById("spot");
-  window.addEventListener("mousemove", (e) => {
-    spot.style.background = `radial-gradient(600px at ${e.clientX}px ${e.clientY}px, rgba(29,78,116,.18), transparent 80%)`;
-  }, { passive: true });
-
-  // reveal on scroll
-  const io = new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.1});
-  document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
-
-  // active nav link on scroll
-  const links = document.querySelectorAll(".navcol a");
-  const secs = ["about","experience","work","contact"].map(id=>document.getElementById(id));
-  const nav = new IntersectionObserver((es)=>{
-    es.forEach(e=>{
-      if(e.isIntersecting){
-        links.forEach(l=>l.classList.toggle("active", l.getAttribute("href")==="#"+e.target.id));
-      }
-    });
-  },{rootMargin:"-30% 0px -60% 0px"});
-  secs.forEach(s=>s&&nav.observe(s));
+document.querySelectorAll('[data-dialog]').forEach(function(a){a.addEventListener('click',function(e){var d=document.getElementById(a.dataset.dialog);if(!d||typeof d.showModal!=='function')return;e.preventDefault();d.showModal();});});
+document.querySelectorAll('dialog.dlg').forEach(function(d){d.addEventListener('click',function(e){if(e.target===d)d.close();});});
 </script>
 </body>
 </html>
